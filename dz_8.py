@@ -16,7 +16,16 @@ users = [
     {
         "name": "Anna", "birthday": "1981-05-20"
     },
-    {"name": "Zoya", "birthday": "1975-05-23"}
+    {
+        "name": "Zoya", "birthday": "1975-05-23"
+    },
+    {
+        "name": "Nastya", "birthday": "1975-06-04"
+    },
+    {
+        "name": "Stanislav", "birthday": "2000-06-01"
+    },
+    {"name" : "Matvey", "birthday":"2000-06-10"}
 ]
 
 
@@ -33,7 +42,7 @@ def get_birthdays_per_week(users: list) -> dict:
         birt = datetime.strptime(birthday, '%Y-%m-%d')
         other_birt = birt.replace(year=date_now.year)
         difference = other_birt.date() - date_now.date()
-        if timedelta(-1) <= difference <= timedelta(7):
+        if timedelta(0) <= difference <= timedelta(7):
             d = datetime.weekday(other_birt)
             if d == 0 or d == 5 or d == 6:
                 mon.append(i['name'])
